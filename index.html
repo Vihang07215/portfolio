@@ -13,6 +13,8 @@
 
     </head>
     <body>
+        <div id="scroll-progress"></div>
+
         <!-- Navigation -->
         <nav class="navbar" id="navbar">
             <div class="nav-container">
@@ -37,8 +39,10 @@
             <div class="hero-container">
                 <div class="hero-content">
                     <h1>Vihang Bhavsar</h1>
-                    <p class="hero-subtitle">Experienced in developing scalable
-                        APIs using Node.js and NestJS.</p>
+                    <p class="hero-subtitle">
+                        <span id="typing"></span>
+                    </p>
+
                     <a href="#updates" class="cta-button">View Work</a>
                 </div>
                 <div class="hero-image">
@@ -49,43 +53,53 @@
 
         <!-- About Section -->
         <section class="about" id="about">
-    <div class="about-container">
-        <h2 class="section-title">My Creative Spark</h2>
+            <div class="about-container">
+                <h2 class="section-title">My Creative Spark</h2>
 
-        <div class="about-grid">
-            <div class="about-card fade-in">
-                <h3>Passion for Backend Engineering</h3>
-                <p>
-                    I am a Backend Developer with 2+ years of experience building
-                    scalable, secure, and high-performance web applications.
-                    I enjoy designing clean APIs, solving complex business logic,
-                    and creating systems that work reliably under real-world load.
-                </p>
+                <div class="about-grid">
+                    <div class="about-card fade-in">
+                        <h3>Passion for Backend Engineering</h3>
+                        <p>
+                            I am a Backend Developer with 2+ years of experience
+                            building
+                            scalable, secure, and high-performance web
+                            applications.
+                            I enjoy designing clean APIs, solving complex
+                            business logic,
+                            and creating systems that work reliably under
+                            real-world load.
+                        </p>
+                    </div>
+
+                    <div class="about-card fade-in">
+                        <h3>Real-Time & Scalable Systems</h3>
+                        <p>
+                            I specialize in real-time application development
+                            using
+                            WebSockets and Socket.io. From chat applications to
+                            live data
+                            updates, I focus on building fast, responsive
+                            systems using
+                            Node.js, NestJS, and microservices architecture.
+                        </p>
+                    </div>
+
+                    <div class="about-card fade-in">
+                        <h3>Production-Ready Solutions</h3>
+                        <p>
+                            With hands-on experience in MongoDB, MySQL,
+                            PostgreSQL, and
+                            RESTful APIs, I build production-ready backend
+                            solutions.
+                            I follow best practices in authentication,
+                            role-based access,
+                            database optimization, and Agile development
+                            workflows.
+                        </p>
+                    </div>
+                </div>
             </div>
-
-            <div class="about-card fade-in">
-                <h3>Real-Time & Scalable Systems</h3>
-                <p>
-                    I specialize in real-time application development using
-                    WebSockets and Socket.io. From chat applications to live data
-                    updates, I focus on building fast, responsive systems using
-                    Node.js, NestJS, and microservices architecture.
-                </p>
-            </div>
-
-            <div class="about-card fade-in">
-                <h3>Production-Ready Solutions</h3>
-                <p>
-                    With hands-on experience in MongoDB, MySQL, PostgreSQL, and
-                    RESTful APIs, I build production-ready backend solutions.
-                    I follow best practices in authentication, role-based access,
-                    database optimization, and Agile development workflows.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
+        </section>
 
         <!-- Updates Section -->
         <section class="updates" id="updates">
@@ -105,6 +119,7 @@
                                 users to communicate through both one-to-one and
                                 group chats with seamless and secure
                                 interactions.</p>
+                                
                             <a href="https://github.com/Vihang07215/Chat-App"
                                 class="read-more" target="_blank">See More →</a>
                         </div>
@@ -318,8 +333,56 @@
                 }
             });
         });
+        window.addEventListener('scroll', () => {
+  const scroll =
+    (window.scrollY /
+      (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-progress').style.width = scroll + '%';
+});
+
+document.querySelectorAll('.cta-button').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const rect = btn.getBoundingClientRect();
+    btn.style.setProperty('--x', `${e.clientX - rect.left}px`);
+    btn.style.setProperty('--y', `${e.clientY - rect.top}px`);
+  });
+});
+
+
+const texts = [
+  "Backend Developer | Node.js & NestJS",
+  "Building Scalable APIs 🚀",
+  "Real-Time Systems & Microservices"
+];
+
+let index = 0;
+let charIndex = 0;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  if (charIndex < texts[index].length) {
+    typingElement.textContent += texts[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 70);
+  } else {
+    setTimeout(eraseEffect, 2000);
+  }
+}
+
+function eraseEffect() {
+  if (charIndex > 0) {
+    typingElement.textContent =
+      texts[index].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, 40);
+  } else {
+    index = (index + 1) % texts.length;
+    setTimeout(typeEffect, 500);
+  }
+}
+
+typeEffect();
+
     </script>
     </body>
-
 </html>
-
