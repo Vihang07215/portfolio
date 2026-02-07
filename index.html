@@ -3,22 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vihang Bhavsar - Portfolio</title>
+        <title>Vihang Bhavsar - Backend Developer Portfolio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/main.css">
         <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap"
             rel="stylesheet">
-
     </head>
     <body>
         <div id="scroll-progress"></div>
+        <div id="cursor-dot"></div>
+        <div id="cursor-outline"></div>
 
         <!-- Navigation -->
         <nav class="navbar" id="navbar">
             <div class="nav-container">
-                <a href="#" class="logo">Vihang</a>
+                <a href="#" class="logo">
+                    <span class="logo-bracket">&lt;</span>
+                    Vihang
+                    <span class="logo-bracket">/&gt;</span>
+                </a>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
@@ -27,8 +32,11 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#updates">Projects</a></li>
-                    <li><a href="#gallery">Technologies</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li><a href="#technologies">Tech Stack</a></li>
                     <li><a href="#contact" class="contact-btn">Contact</a></li>
                 </ul>
             </div>
@@ -36,17 +44,51 @@
 
         <!-- Hero Section -->
         <section class="hero" id="home">
+            <div class="hero-bg-animation"></div>
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1>Vihang Bhavsar</h1>
+                    <div class="hero-label">Backend Developer</div>
+                    <h1>
+                        <span class="glitch" data-text="Vihang">Vihang</span>
+                        <span class="glitch" data-text="Bhavsar">Bhavsar</span>
+                    </h1>
                     <p class="hero-subtitle">
                         <span id="typing"></span>
+                        <span class="cursor-blink">|</span>
                     </p>
-
-                    <a href="#updates" class="cta-button">View Work</a>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="cta-button primary">
+                            <span>View Projects</span>
+                            <div class="button-glow"></div>
+                        </a>
+                        <a href="#contact" class="cta-button secondary">
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+                    <div class="hero-scroll-indicator">
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
+                        <p>Scroll to explore</p>
+                    </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/vihang image.jpg" alt="Vihang Bhavsar">
+                    <div class="image-frame">
+                        <img src="images/vihang image.jpg" alt="Vihang Bhavsar">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="floating-card card-1">
+                        <span class="icon">⚡</span>
+                        <span>Node.js Expert</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="icon">🚀</span>
+                        <span>NestJS Pro</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span class="icon">💾</span>
+                        <span>Database Master</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -54,336 +96,529 @@
         <!-- About Section -->
         <section class="about" id="about">
             <div class="about-container">
-                <h2 class="section-title">My Creative Spark</h2>
+                <div class="section-header">
+                    <span class="section-tag">WHO I AM</span>
+                    <h2 class="section-title">My Creative Spark</h2>
+                    <div class="title-underline"></div>
+                </div>
 
                 <div class="about-grid">
-                    <div class="about-card fade-in">
+                    <div class="about-card fade-in" data-tilt>
+                        <div class="card-icon">🎯</div>
                         <h3>Passion for Backend Engineering</h3>
                         <p>
-                            I am a Backend Developer with 2+ years of experience
-                            building
-                            scalable, secure, and high-performance web
-                            applications.
-                            I enjoy designing clean APIs, solving complex
-                            business logic,
-                            and creating systems that work reliably under
-                            real-world load.
+                            Backend Developer with 2+ years of experience
+                            building scalable,
+                            secure, and high-performance web applications. I
+                            enjoy designing
+                            clean APIs, solving complex business logic, and
+                            creating systems
+                            that work reliably under real-world load.
                         </p>
+                        <div class="card-shine"></div>
                     </div>
 
-                    <div class="about-card fade-in">
+                    <div class="about-card fade-in" data-tilt>
+                        <div class="card-icon">⚡</div>
                         <h3>Real-Time & Scalable Systems</h3>
                         <p>
-                            I specialize in real-time application development
-                            using
-                            WebSockets and Socket.io. From chat applications to
-                            live data
-                            updates, I focus on building fast, responsive
-                            systems using
-                            Node.js, NestJS, and microservices architecture.
+                            Specialized in real-time application development
+                            using WebSockets
+                            and Socket.io. From chat applications to live data
+                            updates, I focus
+                            on building fast, responsive systems using Node.js,
+                            NestJS, and
+                            microservices architecture.
                         </p>
+                        <div class="card-shine"></div>
                     </div>
 
-                    <div class="about-card fade-in">
+                    <div class="about-card fade-in" data-tilt>
+                        <div class="card-icon">🛠️</div>
                         <h3>Production-Ready Solutions</h3>
                         <p>
-                            With hands-on experience in MongoDB, MySQL,
-                            PostgreSQL, and
-                            RESTful APIs, I build production-ready backend
-                            solutions.
-                            I follow best practices in authentication,
-                            role-based access,
-                            database optimization, and Agile development
-                            workflows.
+                            Hands-on experience in MongoDB, MySQL, PostgreSQL,
+                            and RESTful APIs.
+                            I build production-ready backend solutions following
+                            best practices in
+                            authentication, role-based access, database
+                            optimization, and Agile workflows.
                         </p>
+                        <div class="card-shine"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Updates Section -->
-        <section class="updates" id="updates">
-            <div class="updates-container">
-                <h2 class="section-title">Projects</h2>
-                <div class="updates-grid">
-                    <div class="update-card fade-in">
-                        <img
-                            src="images/chatapp image.png"
-                            alt="New Art Series" class="update-image">
-                        <div class="update-content">
-                            <h3>Chat App</h3>
-                            <p>About
-                                This project is a real-time Chat Application
-                                built using NestJS, inspired by popular
-                                messaging platforms like WhatsApp. It allows
-                                users to communicate through both one-to-one and
-                                group chats with seamless and secure
-                                interactions.</p>
-                                
-                            <a href="https://github.com/Vihang07215/Chat-App"
-                                class="read-more" target="_blank">See More →</a>
+        <!-- Experience Timeline -->
+        <section class="experience" id="experience">
+            <div class="experience-container">
+                <div class="section-header">
+                    <span class="section-tag">MY JOURNEY</span>
+                    <h2 class="section-title">Experience Timeline</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item fade-in left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">06/2025 - 10/2025</div>
+                            <h3>Company : Samcomtechnobrains</h3>
+                            <h4>Node js Developer</h4>
+                            <p>
+                                Built scalable backend systems for various
+                                clients including
+                                e-commerce platforms, chat applications, and
+                                enterprise management
+                                systems. Specialized in Node.js, NestJS, and
+                                real-time architectures.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>Node.js</span>
+                                <span>NestJS</span>
+                                <span>MongoDB</span>
+                                <span>PostgreSQL</span>
+                                <span>Socet.io</span>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+
+                    <div class="timeline-item fade-in right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">09/2023 - 05/2025</div>
+                            <h3>Company : Zendevx</h3>
+                            <h4>Jr. Software Developer</h4>
+                            <p>
+                                I began my backend development journey by
+                                building my first ERP model using HTML, CSS,
+                                PHP, and JavaScript, which helped me understand
+                                core business workflows and system design. After
+                                that foundation, I transitioned into Node.js,
+                                JavaScript, Node.js fundamentals,
+                                database design, and RESTful API development
+                                through intensive learning and hands-on ERP
+                                development.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>JavaScript</span>
+                                <span>Node.js</span>
+                                <span>REST APIs</span>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="skills-container">
+                <div class="section-header">
+                    <span class="section-tag">EXPERTISE</span>
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-categories">
+                    <!-- Backend Development -->
+                    <div class="skill-category-wrapper fade-in">
+                        <div class="category-header">
+                            <div class="category-icon">⚙️</div>
+                            <h3>Backend Development</h3>
+                        </div>
+                        <div class="skills-tag-cloud">
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🚀</span>
+                                <span class="tag-name">Node.js</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🎯</span>
+                                <span class="tag-name">NestJS</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">⚡</span>
+                                <span class="tag-name">Express.js</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🔌</span>
+                                <span class="tag-name">RESTful APIs</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🔐</span>
+                                <span class="tag-name">JWT Auth</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="update-card fade-in">
-                        <img
-                            src="images/images.jpg"
-                            alt="Client Project" class="update-image">
-                        <div class="update-content">
+
+                    <!-- Databases -->
+                    <div class="skill-category-wrapper fade-in">
+                        <div class="category-header">
+                            <div class="category-icon">💾</div>
+                            <h3>Databases & ORMs</h3>
+                        </div>
+                        <div class="skills-tag-cloud">
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🍃</span>
+                                <span class="tag-name">MongoDB</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🐘</span>
+                                <span class="tag-name">PostgreSQL</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🐬</span>
+                                <span class="tag-name">MySQL</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">⚡</span>
+                                <span class="tag-name">Prisma ORM</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🔥</span>
+                                <span class="tag-name">Redis</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Real-Time & DevOps -->
+                    <div class="skill-category-wrapper fade-in">
+                        <div class="category-header">
+                            <div class="category-icon">🔧</div>
+                            <h3>Real-Time & DevOps</h3>
+                        </div>
+                        <div class="skills-tag-cloud">
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">💬</span>
+                                <span class="tag-name">Socket.io</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🌐</span>
+                                <span class="tag-name">WebSockets</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">📦</span>
+                                <span class="tag-name">Git & GitHub</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🐳</span>
+                                <span class="tag-name">Docker</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🔄</span>
+                                <span class="tag-name">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frontend & Other -->
+                    <div class="skill-category-wrapper fade-in">
+                        <div class="category-header">
+                            <div class="category-icon">🎨</div>
+                            <h3>Frontend & Additional</h3>
+                        </div>
+                        <div class="skills-tag-cloud">
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">⚛️</span>
+                                <span class="tag-name">React</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">📜</span>
+                                <span class="tag-name">TypeScript</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🟨</span>
+                                <span class="tag-name">JavaScript</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">📝</span>
+                                <span class="tag-name">Swagger/OpenAPI</span>
+                            </div>
+                            <div class="skill-tag expert">
+                                <span class="tag-icon">🔍</span>
+                                <span class="tag-name">Postman</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats" id="stats">
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">💼</div>
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-glow"></div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-glow"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="projects-container">
+                <div class="section-header">
+                    <span class="section-tag">MY WORK</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card fade-in" data-tilt>
+                        <div class="project-image">
+                            <img src="images/chatapp image.png" alt="Chat App">
+                            <div class="project-overlay">
+                                <a
+                                    href="https://github.com/Vihang07215/Chat-App"
+                                    target="_blank" class="project-link">
+                                    View Project →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>NestJS</span>
+                                <span>Socket.io</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <h3>Real-Time Chat Application</h3>
+                            <p>
+                                WhatsApp-inspired chat app with one-to-one and
+                                group messaging,
+                                real-time updates, and secure user
+                                authentication.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in" data-tilt>
+                        <div class="project-image">
+                            <img src="images/images.jpg"
+                                alt="Leave Management System">
+                            <div class="project-overlay">
+                                <a
+                                    href="https://github.com/Vihang07215/Leave-Management-System"
+                                    target="_blank" class="project-link">
+                                    View Project →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MySQL</span>
+                            </div>
                             <h3>Leave Management System</h3>
-                            <p>A role-based Leave Management System built using
-                                Node.js, designed to manage employees,
-                                departments, and leave approvals efficiently
-                                with secure authentication and
-                                authorization.</p>
-                            <a
-                                href="https://github.com/Vihang07215/Leave-Management-System"
-                                class="read-more" target="_blank">See More →</a>
+                            <p>
+                                Role-based system for managing employees,
+                                departments, and leave
+                                approvals with secure authentication and
+                                authorization.
+                            </p>
                         </div>
                     </div>
-                    <div class="update-card fade-in">
-                        <img
-                            src="images/e-commerce.png"
-                            alt="Workshop" class="update-image">
-                        <div class="update-content">
-                            <h3>Ecomm-app</h3>
-                            <p>This project is a full-stack E-Commerce
-                                Application built using NestJS for the backend
-                                and React for the frontend. It provides
-                                essential online shopping features such as
-                                product management, order creation, and
-                                real-time order calculation.</p>
-                            <a href="https://github.com/Vihang07215/Ecomm-app"
-                                class="read-more" target="_blank">See More →</a>
+
+                    <div class="project-card fade-in" data-tilt>
+                        <div class="project-image">
+                            <img src="images/e-commerce.png"
+                                alt="E-commerce App">
+                            <div class="project-overlay">
+                                <a
+                                    href="https://github.com/Vihang07215/Ecomm-app"
+                                    target="_blank" class="project-link">
+                                    View Project →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>NestJS</span>
+                                <span>React</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <h3>E-Commerce Platform</h3>
+                            <p>
+                                Full-stack e-commerce application with product
+                                management,
+                                order processing, and real-time order
+                                calculations.
+                            </p>
                         </div>
                     </div>
-                    <div class="update-card fade-in">
-                        <img
-                            src="images/invoice exoenss.png"
-                            alt="Behind the Scenes" class="update-image">
-                        <div class="update-content">
-                            <h3> invoice-expense-backend</h3>
-                            <p>A production-ready backend-only application built
-                                using Node.js, Express, PostgreSQL, and Prisma.
-                                This system allows organizations to manage
-                                invoices, track expenses, and generate PDF
-                                reports.</p>
-                            <a
-                                href="https://github.com/Vihang07215/invoice-expense-backend"
-                                class="read-more" target="_blank">See More →</a>
+
+                    <div class="project-card fade-in" data-tilt>
+                        <div class="project-image">
+                            <img src="images/invoice exoenss.png"
+                                alt="Invoice System">
+                            <div class="project-overlay">
+                                <a
+                                    href="https://github.com/Vihang07215/invoice-expense-backend"
+                                    target="_blank" class="project-link">
+                                    View Project →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>Prisma</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <h3>Invoice & Expense System</h3>
+                            <p>
+                                Production-ready backend for managing invoices,
+                                tracking expenses,
+                                and generating PDF reports for organizations.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="see-more-wrapper">
-                    <a
-                        href="https://github.com/Vihang07215"
-                        target="_blank"
-                        class="see-more-btn">
-                        View All Projects →
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="gallery" id="gallery">
-            <div class="gallery-container">
-                <h2 class="section-title">Technologies</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/html logo.png"
-                            alt="HTML">
-                    </div>
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/css logo.png"
-                            alt="CSS">
-                    </div>
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/boostrap.jpg"
-                            alt="boostrap">
-                    </div>
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/js logo.webp"
-                            alt="JS">
-                    </div>
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/node js.png"
-                            alt="Node js">
-                    </div>
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/nest js.png"
-                            alt="Nest JS">
-                    </div>
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/react js.png"
-                            alt="React Js">
-                    </div>
-
-                    <div class="gallery-item fade-in">
-                        <img
-                            src="images/express-middlewares-complete-guide.png"
-                            alt="Gallery 8">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Social Section -->
-        <section class="social" id="contact">
-            <div class="social-container">
-                <h2 class="section-title">Connect With Me</h2>
-                <div class="social-links">
-                    <a
-                        href="https://www.linkedin.com/in/vihang-bhavsar-5742192ab/"
-                        target="_blank" class="social-link"
-                        aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                        </svg>
-                    </a>
                     <a href="https://github.com/Vihang07215" target="_blank"
-                        class="social-link" aria-label="Github">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            height="24"
-                            fill="currentColor">
-                            <path
-                                d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385 .6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04  -3.338.724-4.042-1.61-4.042-1.61  -.546-1.387-1.333-1.757-1.333-1.757  -1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998 .108-.776.418-1.305.762-1.605 -2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22 -.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23 .96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23 .645 1.653.24 2.873.12 3.176 .765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92 .435.375.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57 C20.565 22.092 24 17.592 24 12.297 c0-6.627-5.373-12-12-12" />
+                        class="see-more-btn">
+                        <span>Explore All Projects</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20"
+                            fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
-
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section class="technologies" id="technologies">
+            <div class="technologies-container">
+                <div class="section-header">
+                    <span class="section-tag">TECH STACK</span>
+                    <h2 class="section-title">Technologies I Use</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="tech-grid">
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img src="images/html logo.png" alt="HTML5">
+                            <span class="tech-name">HTML5</span>
+                        </div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img src="images/css logo.png" alt="CSS3">
+                            <span class="tech-name">CSS3</span>
+                        </div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img src="images/boostrap.jpg" alt="Bootstrap">
+                            <span class="tech-name">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img src="images/js logo.webp" alt="JavaScript">
+                            <span class="tech-name">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img src="images/node js.png" alt="Node.js">
+                            <span class="tech-name">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img src="images/nest js.png" alt="NestJS">
+                            <span class="tech-name">NestJS</span>
+                        </div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img src="images/react js.png" alt="React">
+                            <span class="tech-name">React</span>
+                        </div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-card">
+                            <img
+                                src="images/express-middlewares-complete-guide.png"
+                                alt="Express">
+                            <span class="tech-name">Express</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="section-header">
+                    <span class="section-tag">GET IN TOUCH</span>
+                    <h2 class="section-title">Let's Connect</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-content">
+                  
+
+                    <div class="social-links">
+                        <a
+                            href="https://www.linkedin.com/in/vihang-bhavsar-5742192ab/"
+                            target="_blank"
+                            class="social-link linkedin"
+                            aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Vihang07215"
+                            target="_blank"
+                            class="social-link github"
+                            aria-label="Github">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" width="24" height="24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385 .6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998 .108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23 .645 1.653.24 2.873.12 3.176 .765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92 .435.375.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57 C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Vihang Bhavsar. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2026 Vihang Bhavsar. Crafted with 💙 and ☕</p>
+                <p class="footer-subtitle">Building the backend of tomorrow,
+                    today.</p>
+            </div>
         </footer>
 
-        <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Intersection Observer for fade-in animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        fadeElements.forEach(element => {
-            fadeObserver.observe(element);
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        window.addEventListener('scroll', () => {
-  const scroll =
-    (window.scrollY /
-      (document.body.scrollHeight - window.innerHeight)) * 100;
-  document.getElementById('scroll-progress').style.width = scroll + '%';
-});
-
-document.querySelectorAll('.cta-button').forEach(btn => {
-  btn.addEventListener('mousemove', e => {
-    const rect = btn.getBoundingClientRect();
-    btn.style.setProperty('--x', `${e.clientX - rect.left}px`);
-    btn.style.setProperty('--y', `${e.clientY - rect.top}px`);
-  });
-});
-
-
-const texts = [
-  "Backend Developer | Node.js & NestJS",
-  "Building Scalable APIs 🚀",
-  "Real-Time Systems & Microservices"
-];
-
-let index = 0;
-let charIndex = 0;
-const typingElement = document.getElementById("typing");
-
-function typeEffect() {
-  if (charIndex < texts[index].length) {
-    typingElement.textContent += texts[index].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeEffect, 70);
-  } else {
-    setTimeout(eraseEffect, 2000);
-  }
-}
-
-function eraseEffect() {
-  if (charIndex > 0) {
-    typingElement.textContent =
-      texts[index].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(eraseEffect, 40);
-  } else {
-    index = (index + 1) % texts.length;
-    setTimeout(typeEffect, 500);
-  }
-}
-
-typeEffect();
-
-    </script>
+        <script src="js/main.js"></script>
     </body>
 </html>
-
