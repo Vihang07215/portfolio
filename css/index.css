@@ -442,21 +442,21 @@ body {
 }
 
 .card-1 {
-    top: 10%;
+    top: 20%;
     right: -10%;
     animation-delay: 0s;
 }
 
 .card-2 {
-    bottom: 40%;
-    right: -15%;
+    bottom: 20%;
+    right: -8%;
     animation-delay: 2s;
 }
 
 .card-3 {
-    bottom: 10%;
+    bottom: 50%;
     left: -10%;
-    animation-delay: 4s;
+    animation-delay: 3s;
 }
 
 @keyframes float {
@@ -1407,3 +1407,4 @@ footer {
         padding: 1rem 1.5rem;
     }
 }
+
