@@ -65,10 +65,9 @@ window.addEventListener('scroll', () => {
 // Typing Effect for Hero
 const texts = [
     "Building Scalable Backend Systems",
-    "Node.js & NestJS Specialist",
+    "Node.js & NestJS Developer",
     "Real-Time Application Developer",
-    "API Architecture Expert",
-    "Database Optimization Pro"
+    "Database Optimization "
 ];
 
 let textIndex = 0;
@@ -377,4 +376,5 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('%c Portfolio Loaded Successfully! 🚀', 'color: #00d4ff; font-size: 20px; font-weight: bold;');
+
 console.log('%c Built with ❤️ by Vihang Bhavsar', 'color: #a855f7; font-size: 14px;');
